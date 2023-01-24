@@ -6,10 +6,9 @@ import { useTitle } from "../../hooks/useTitle";
 import { useFilter } from "../../context";
 
 export const Products = () => {
-  // const { productList } = useFilter();
+  const { products, initialProductList } = useFilter();
   useTitle("Explore Ebooks Collections");
   const [show, setShow] = useState(false);
-  const [products, setProducts] = useState([]);
   const search = useLocation().search;
   const searchTerm = new URLSearchParams(search).get("q");
 
@@ -21,7 +20,8 @@ export const Products = () => {
         }`
       );
       const data = await response.json();
-      setProducts(data);
+
+      initialProductList(data);
     }
     fetchProducts();
   }, [searchTerm]);
