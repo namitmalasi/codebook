@@ -3,9 +3,11 @@ import { useLocation } from "react-router-dom";
 import { ProductCard } from "../../components";
 import { FilterBar } from "./components/FilterBar";
 import { useTitle } from "../../hooks/useTitle";
+import { useFilter } from "../../context";
 
 export const Products = () => {
-  useTitle("Explore Ebooks CollectionS");
+  // const { productList } = useFilter();
+  useTitle("Explore Ebooks Collections");
   const [show, setShow] = useState(false);
   const [products, setProducts] = useState([]);
   const search = useLocation().search;

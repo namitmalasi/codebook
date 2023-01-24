@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Rating } from "../components";
 import { useTitle } from "../hooks/useTitle";
 
+
 export const ProductDetail = () => {
   const [product, setProduct] = useState({});
   const { id } = useParams();
