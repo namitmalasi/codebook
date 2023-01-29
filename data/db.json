@@ -238,5 +238,12 @@
     }
   ],
   "orders": [],
-  "users": []
+  "users": [
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$keq243PiZ0O5A6iplUcb0u8koIuBjOeWMFcutrq1wtw6elXls5oE2",
+      "name": "test",
+      "id": 1
+    }
+  ]
 }

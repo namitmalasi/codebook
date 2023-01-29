@@ -20,7 +20,7 @@ export const Header = () => {
       document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
-
+   
   return (
     <header>
       <nav className="bg-white dark:bg-gray-900">
