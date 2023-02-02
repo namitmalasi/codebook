@@ -1,4 +1,7 @@
+import { useCart } from "../../../context";
+
 export const Checkout = ({ setCheckout }) => {
+  const { total } = useCart();
   return (
     <section>
       <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
@@ -132,7 +135,7 @@ export const Checkout = ({ setCheckout }) => {
                   />
                 </div>
                 <p className="mb-4 text-2xl font-semibold text-lime-500 text-center">
-                  $99
+                  ₹{total}
                 </p>
                 <button
                   type="submit"
