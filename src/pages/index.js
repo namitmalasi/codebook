@@ -5,3 +5,4 @@ export { Cart } from "./Cart/Cart";
 export { Login } from "./Login";
 export { Register } from "./Register";
 export { Order } from "./Order/Order";
+export { Dashboard } from "./Dashboard/Dashboard";

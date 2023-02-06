@@ -8,6 +8,7 @@ export const Checkout = ({ setCheckout }) => {
   const token = JSON.parse(sessionStorage.getItem("token"));
   const cbid = JSON.parse(sessionStorage.getItem("cbid"));
   const navigate = useNavigate();
+  
   useEffect(() => {
     async function getUser() {
       const response = await fetch(`http://localhost:8000/600/users/${cbid}`, {
