@@ -22,33 +22,38 @@ export const Checkout = ({ setCheckout }) => {
       setUser(data);
     }
     getUser();
-  }, []);
+  }, [token, cbid]);
 
   async function handleOrderSubmit(e) {
     e.preventDefault();
-    const order = {
-      cartList: cartList,
-      amount_paid: total,
-      quantity: cartList.length,
-      user: {
-        name: user.name,
-        email: user.email,
-        id: user.id,
-      },
-    };
 
-    const response = await fetch("http://localhost:8000/660/orders", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(order),
-    });
+    try {
+      const order = {
+        cartList: cartList,
+        amount_paid: total,
+        quantity: cartList.length,
+        user: {
+          name: user.name,
+          email: user.email,
+          id: user.id,
+        },
+      };
 
-    const data = await response.json();
-    clearCart();
-    navigate("/");
+      const response = await fetch("http://localhost:8000/660/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(order),
+      });
+
+      const data = await response.json();
+      clearCart();
+      navigate("/order-summary", { state: { data: data, status: true } });
+    } catch {
+      navigate("/order-summary", { state: { status: false } });
+    }
   }
   return (
     <section>
