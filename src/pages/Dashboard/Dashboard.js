@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { getUserOrders } from "../../services";
 import { DashboardCard } from "./components/DashboardCard";
 import { DashboardEmpty } from "./components/DashboardEmpty";
 
@@ -10,18 +11,7 @@ export function Dashboard() {
 
   useEffect(() => {
     async function fetchOrders() {
-      const response = await fetch(
-        `http://localhost:8000/660/orders?user.id=${cbid}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      const data = await response.json();
+      const data = await getUserOrders();
       setOrders(data);
     }
     fetchOrders();
