@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useTitle } from "../../hooks/useTitle";
 import { getUserOrders } from "../../services";
 import { DashboardCard } from "./components/DashboardCard";
 import { DashboardEmpty } from "./components/DashboardEmpty";
 
 export function Dashboard() {
   const [orders, setOrders] = useState([]);
+  useTitle("Dashboard");
 
   const token = JSON.parse(sessionStorage.getItem("token"));
   const cbid = JSON.parse(sessionStorage.getItem("cbid"));

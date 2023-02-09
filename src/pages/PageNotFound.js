@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
+import { useTitle } from "../hooks/useTitle";
 
 export function PageNotFound() {
+  useTitle("Page not found");
   return (
     <main>
       <section className="flex flex-col justify-center px-2">
@@ -13,6 +15,7 @@ export function PageNotFound() {
             <img className="" src={Logo} alt="CodeBook page not found" />
           </div>
         </div>
+
         <div className="flex justify-center my-4">
           <Link to="/">
             <button
