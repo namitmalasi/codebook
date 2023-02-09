@@ -9,14 +9,18 @@ export const Register = () => {
 
   async function handleRegister(e) {
     e.preventDefault();
-    const authDetail = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      password: e.target.password.value,
-    };
+    try {
+      const authDetail = {
+        name: e.target.name.value,
+        email: e.target.email.value,
+        password: e.target.password.value,
+      };
 
-    const data = await register(authDetail);
-    data.accessToken ? navigate("/products") : toast.error(data);
+      const data = await register(authDetail);
+      data.accessToken ? navigate("/products") : toast.error(data);
+    } catch (error) {
+      toast.error(error.message);
+    }
   }
   return (
     <main>

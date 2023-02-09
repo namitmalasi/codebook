@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import { Rating } from "../components";
 import { useCart } from "../context";
 import { useTitle } from "../hooks/useTitle";
@@ -15,8 +16,12 @@ export const ProductDetail = () => {
 
   useEffect(() => {
     async function fetchProduct() {
-      const data = await getProduct(id);
-      setProduct(data);
+      try {
+        const data = await getProduct(id);
+        setProduct(data);
+      } catch (error) {
+        toast.error(error.message);
+      }
     }
     fetchProduct();
   }, [id]);
