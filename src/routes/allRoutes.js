@@ -12,7 +12,7 @@ import {
 } from "../pages";
 import { ProtectedRoute } from "./ProtectedRoute";
 
-const AllRoutes = () => {
+function AllRoutes() {
   return (
     <>
       <Routes>
@@ -50,6 +50,6 @@ const AllRoutes = () => {
       </Routes>
     </>
   );
-};
+}
 
 export default AllRoutes;
