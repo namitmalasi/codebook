@@ -12,7 +12,7 @@ import {
 } from "../pages";
 import { ProtectedRoute } from "./ProtectedRoute";
 
-export const AllRoutes = () => {
+export const AlRoutes = () => {
   return (
     <>
       <Routes>
