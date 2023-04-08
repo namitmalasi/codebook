@@ -16,7 +16,7 @@
 
 # Tech Stack
 
-- React
+- Reactjs
 - TailwindCSS
 - Context API
 - JSON Server
