@@ -26,7 +26,7 @@ export async function getProduct(id) {
 
 export async function getFeaturedList() {
   const response = await fetch(
-    `${process.env.REACT_APP_HOST}/444/featured_products`
+    `${process.env.REACT_APP_HOST}444/featured_products`
   );
   if (!response.ok) {
     // eslint-disable-next-line no-throw-literal
